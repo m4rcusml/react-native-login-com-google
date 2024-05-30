@@ -1,25 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Login } from './src/screens/Login';
 import { AppProvider, UserProvider } from '@realm/react';
+import { Login } from './src/screens/Login';
+import { Home } from './src/screens/Home';
 
 export default function App() {
   return (
-    <AppProvider id='appId'>
+    <AppProvider id='nexusskillapp-fnbvszr'>
       <UserProvider fallback={<Login />}>
-        <View style={styles.container}>
-          <Text>Home</Text>
-          <StatusBar style="auto" />
-        </View>
+        <Home />
+        <StatusBar style='auto' />
       </UserProvider>
     </AppProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-});
